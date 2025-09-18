@@ -18,11 +18,11 @@ int main()
 {
   // TO DO: Insert your code to display a menu for user to select to add/delete/view Student and course information.
 
-    Node* head = nullptr; // start of the linked list
+    Node* head = nullptr; 
     int choice;
 
     do {
-        // Menu
+        
         cout << "\n1. Insert \n";
         cout << "2. Delete \n";
         cout << "3. Search \n";
@@ -34,7 +34,7 @@ int main()
         cin >> choice;
 
         if (choice == 1) {
-            // --- INSERT STUDENT ---
+            
             int id;
             string name;
             float gpa;
@@ -49,11 +49,11 @@ int main()
             Node* newNode = new Node(Student(id, name, gpa));
 
             if (!head) {
-                // If list is empty, new node becomes the head
+                
                 head = newNode;
             }
             else {
-                // Otherwise go to the last node and link new node
+               
                 Node* current = head;
                 while (current->next) current = current->next;
                 current->next = newNode;
@@ -61,7 +61,7 @@ int main()
             cout << "Student added.\n";
         }
         else if (choice == 2) {
-            // --- DELETE STUDENT ---
+            
             int id;
             cout << "Enter ID to delete: ";
             cin >> id;
@@ -85,7 +85,7 @@ int main()
             if (!found) cout << "Student not found.\n";
         }
         else if (choice == 3) {
-            // --- SEARCH STUDENT ---
+            
             int id;
             cout << "Enter ID to search: ";
             cin >> id;
@@ -104,7 +104,7 @@ int main()
             if (!found) cout << "Student not found.\n";
         }
         else if (choice == 4) {
-            // --- DISPLAY ALL STUDENTS ---
+            
             if (!head) {
                 cout << "No students in the list.\n";
             }
@@ -117,7 +117,7 @@ int main()
             }
         }
         else if (choice == 5) {
-            // --- COUNT STUDENTS ---
+           
             int count = 0;
             Node* current = head;
             while (current) {
@@ -127,7 +127,7 @@ int main()
             cout << "Total students: " << count << endl;
         }
         else if (choice == 6) {
-            // --- ADD A COURSE ---
+            
             int id;
             cout << "Enter ID: ";
             cin >> id;
@@ -156,7 +156,7 @@ int main()
 
     } while (choice != 7);
 
-    // --- CLEAN UP MEMORY ---
+
     while (head) {
         Node* temp = head;
         head = head->next;
